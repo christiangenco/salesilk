@@ -80,14 +80,6 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "6/9/15",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
     "distributor": "A & A CUSTOM DESIGNS",
     "innovation": 0,
     "kanata": 0,
@@ -162,14 +154,6 @@ window.data = [
   {
     "distributor": "A TURTLE LOVES ME",
     "innovation": 271,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "A-1 EMBROIDERY & SCREEN PRINTI",
-    "innovation": 0,
     "kanata": 0,
     "perry": 0,
     "richardson": 0,
@@ -945,15 +929,7 @@ window.data = [
   },
   {
     "distributor": "ALLEGRA PRINT & IMAGING",
-    "innovation": 1616,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "ALLEGRA PRINT & IMAGINMG",
-    "innovation": 876,
+    "innovation": 1616+876,
     "kanata": 0,
     "perry": 0,
     "richardson": 0,
@@ -1208,35 +1184,11 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "ANN R WERME GROUP",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 1316,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "ANN WERME GROUP",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 152.27,
-    "tomax": 0
-  },
-  {
     "distributor": "ANN WERME MARKETING GROUP",
     "innovation": 1740,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "ANN WERME STATIONERS",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
+    "kanata": 3697.92,
+    "perry": 1316,
+    "richardson": 152.27,
     "tomax": 5291
   },
   {
@@ -1739,14 +1691,6 @@ window.data = [
     "distributor": "American Solutions for Business (P)",
     "innovation": 0,
     "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "Ann Werme Marketing Group (P)",
-    "innovation": 0,
-    "kanata": 3697.92,
     "perry": 0,
     "richardson": 0,
     "tomax": 0
@@ -2483,24 +2427,8 @@ window.data = [
     "distributor": "BOUNDLESS NETWORK",
     "innovation": 81909,
     "kanata": 0,
-    "perry": 0,
-    "richardson": 16440.67,
-    "tomax": 0
-  },
-  {
-    "distributor": "BOUNDLESS NETWORK INC",
-    "innovation": 0,
-    "kanata": 0,
     "perry": 34263,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "BOUNDLESS NETWORK, INC.",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
+    "richardson": 16440.67,
     "tomax": 134502.34
   },
   {
@@ -3948,15 +3876,7 @@ window.data = [
     "innovation": 0,
     "kanata": 0,
     "perry": 0,
-    "richardson": 4958.14,
-    "tomax": 0
-  },
-  {
-    "distributor": "CREATIVE IDEAS INC",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 277.16,
+    "richardson": 4958.14 + 277.16,
     "tomax": 0
   },
   {
@@ -4664,28 +4584,12 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "DISTINCTIVE MARKETING IDEAS INC",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
     "distributor": "DISTINCTIVE MKTG IDEAS",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 992.59
-  },
-  {
-    "distributor": "DISTINCTIVE MKTNG. IDEAS",
     "innovation": 3146,
     "kanata": 0,
     "perry": 0,
     "richardson": 0,
-    "tomax": 0
+    "tomax": 992.59
   },
   {
     "distributor": "DIVERSIFIED PROMOTIONS",
@@ -4931,14 +4835,6 @@ window.data = [
     "distributor": "Dei Rossi Embroidery (P)",
     "innovation": 0,
     "kanata": 2758.14,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "Distinctive Marketing Ideas (P)",
-    "innovation": 0,
-    "kanata": 0,
     "perry": 0,
     "richardson": 0,
     "tomax": 0
@@ -6370,18 +6266,10 @@ window.data = [
   {
     "distributor": "HALO BRANDED SOLUTIONS",
     "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 196972.45
-  },
-  {
-    "distributor": "HALO BRANDED SOLUTIONS INC",
-    "innovation": 0,
-    "kanata": 0,
+    "kanata": 40878.92,
     "perry": 98593,
     "richardson": 0,
-    "tomax": 0
+    "tomax": 196972.45
   },
   {
     "distributor": "HANCOCK ADVERTISING GROUP",
@@ -6768,14 +6656,6 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "Halo Branding (P)",
-    "innovation": 0,
-    "kanata": 40878.92,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
     "distributor": "Harvey-Daco, Inc (P)",
     "innovation": 0,
     "kanata": 1941.52,
@@ -6884,16 +6764,8 @@ window.data = [
     "innovation": 336,
     "kanata": 0,
     "perry": 0,
-    "richardson": 0,
-    "tomax": 3065.57
-  },
-  {
-    "distributor": "IDEAS N MOTION",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
     "richardson": 2749.46,
-    "tomax": 0
+    "tomax": 3065.57
   },
   {
     "distributor": "IDENTITY MARKETING SOLUTIONS",
@@ -9362,14 +9234,6 @@ window.data = [
   {
     "distributor": "OFFICEMAX IMPRESS # 1953",
     "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "OK",
-    "innovation": 112473,
     "kanata": 0,
     "perry": 0,
     "richardson": 0,
@@ -14080,14 +13944,6 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "TX",
-    "innovation": 1045599,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
     "distributor": "TYLER DISTRIBUTORS",
     "innovation": 0,
     "kanata": 0,
@@ -14640,28 +14496,12 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "WAYNE ENTERPRISES",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 6808.08,
-    "tomax": 9119
-  },
-  {
     "distributor": "WAYNE ENTERPRISES INC",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 11150,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "WAYNE ENTERPRISES INC.",
     "innovation": 5184,
     "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
+    "perry": 11150,
+    "richardson": 6808.08,
+    "tomax": 9119
   },
   {
     "distributor": "WE'VE GOTCHA COVERED",
@@ -14689,14 +14529,6 @@ window.data = [
   },
   {
     "distributor": "WESTERN ASSOCIATES INC",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "WESTERN FORMS INC",
     "innovation": 0,
     "kanata": 0,
     "perry": 0,
@@ -14737,30 +14569,14 @@ window.data = [
   },
   {
     "distributor": "WHOLESALE CAPS ETC",
-    "innovation": 0,
+    "innovation": 195,
     "kanata": 0,
     "perry": 0,
     "richardson": 5154.44,
     "tomax": 0
   },
   {
-    "distributor": "WHOLESALE CAPS ETC.",
-    "innovation": 195,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
     "distributor": "WHOLESALE SERVICES",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "WHOLESALE SERVOCES",
     "innovation": 0,
     "kanata": 0,
     "perry": 0,
@@ -14920,27 +14736,11 @@ window.data = [
     "tomax": 0
   },
   {
-    "distributor": "XACT BUSINESS SOLUTIONS",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 0,
-    "richardson": 17.18,
-    "tomax": 0
-  },
-  {
     "distributor": "XACT XPRESSIONS INC",
-    "innovation": 0,
-    "kanata": 0,
-    "perry": 850,
-    "richardson": 0,
-    "tomax": 0
-  },
-  {
-    "distributor": "XACTXPRESSIONS",
     "innovation": 702,
     "kanata": 0,
-    "perry": 0,
-    "richardson": 0,
+    "perry": 850,
+    "richardson": 17.18,
     "tomax": 0
   },
   {
