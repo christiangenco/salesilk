@@ -33,14 +33,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/1.0.0/handlebars.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/1.5.3/numeral.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handsontable/0.16.1/handsontable.full.min.js"></script>
     <script src="js/jquery.dynatable.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
     <script src="data.js"></script>
 
     <script>
+      window.getEditDistance = function(a, b){
+        if(a.length == 0) return b.length;
+        if(b.length == 0) return a.length;
+
+        var matrix = [];
+
+        // increment along the first column of each row
+        var i;
+        for(i = 0; i <= b.length; i++){
+          matrix[i] = [i];
+        }
+
+        // increment each column in the first row
+        var j;
+        for(j = 0; j <= a.length; j++){
+          matrix[0][j] = j;
+        }
+
+        // Fill in the rest of the matrix
+        for(i = 1; i <= b.length; i++){
+          for(j = 1; j <= a.length; j++){
+            if(b.charAt(i-1) == a.charAt(j-1)){
+              matrix[i][j] = matrix[i-1][j-1];
+            } else {
+              matrix[i][j] = Math.min(matrix[i-1][j-1] + 1, // substitution
+                                      Math.min(matrix[i][j-1] + 1, // insertion
+                                               matrix[i-1][j] + 1)); // deletion
+            }
+          }
+        }
+
+        return matrix[b.length][a.length];
+      };
+
       // calculate totals
       window.data = _.map(window.data, function(row){
         row.total = row.innovation + row.kanata + row.perry + row.richardson + row.tomax;
+
+        var currencies = ["total", "innovation", "kanata", "perry", "richardson", "tomax"]
+        for(var i=0; i<currencies.length; i++){
+          var key = currencies[i];
+          // console.log(row[key], row[key] === 0)
+          if(row[key] === 0.0){
+            row[key] = "-";
+          }else{
+            row[key] = row[key].toFixed(2);
+          }
+          console.log(row[key]);
+        }
         return row;
       })
       $("#table").dynatable({
