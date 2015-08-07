@@ -78,20 +78,16 @@
       // calculate totals
       window.data = _.map(window.data, function(row){
         row.total = row.innovation + row.kanata + row.perry + row.richardson + row.tomax;
-
-        var currencies = ["total", "innovation", "kanata", "perry", "richardson", "tomax"]
-        for(var i=0; i<currencies.length; i++){
-          var key = currencies[i];
-          // console.log(row[key], row[key] === 0)
-          if(row[key] === 0.0){
-            row[key] = "-";
-          }else{
-            row[key] = row[key].toFixed(2);
-          }
-          console.log(row[key]);
-        }
         return row;
-      })
+      });
+
+      function rowWriter(rowIndex, record, columns, cellWriter) {
+        var cssClass = "span4", li;
+        if (rowIndex % 3 === 0) { cssClass += ' first'; }
+        li = '<li class="' + cssClass + '"><div class="thumbnail"><div class="thumbnail-image">' + record.thumbnail + '</div><div class="caption">' + record.caption + '</div></div></li>';
+        return li;
+      }
+
       $("#table").dynatable({
         dataset: {
           records: window.data,
@@ -103,7 +99,10 @@
         },
         table: {
           copyHeaderClass: true,
-        }
+        },
+         writers: {
+          _rowWriter: rowWriter
+        },
       });
 
       // keybindings
