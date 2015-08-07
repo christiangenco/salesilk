@@ -1,10 +1,11 @@
 <html>
   <head>
     <link rel="stylesheet" href="css/cerulean.bootstrap.min.css">
-    <link rel="stylesheet" href="css/jquery.dynatable.css">
+    <!-- <link rel="stylesheet" href="css/jquery.dynatable.css"> -->
     <style>
       body{
         padding-bottom: 50px;
+        padding-top: 71px;
       }
       #dynatable-pagination-links-table {
         position: fixed;
@@ -13,22 +14,119 @@
         user-select: none;
         -webkit-user-select: none;
       }
+      tr.overview {
+        cursor: pointer;
+      }
+
+      tr.details{
+        /*display: none;*/
+        padding: 0;
+        border: 0;
+      }
+
+      .table-striped>tbody>tr.details:hover{
+        background-color: white;
+      }
+
+      .table > tbody > tr.details > td{
+        padding: 0;
+        border: 0;
+      }
+
+      tr.details .detailsWrapper{
+        padding: 5px;
+        display: none;
+      }
+
+      .table-striped>tbody>tr:nth-of-type(odd) {
+        background-color: white;
+      }
+
+      .table-striped>tbody>tr:nth-of-type(4n-1) {
+        background-color: #f9f9f9;
+      }
+
+      .table-striped>tbody>tr:hover {
+        background-color: #f5f5f5;
+      }
     </style>
   </head>
   <body>
-    <table id="table" class="table table-striped table-hover table-bordered">
-      <thead style="background-color: goldenrod">
-        <th class="foo">Distributor</th>
-        <th>Innovation</th>
-        <th>Kanata</th>
-        <th>Perry</th>
-        <th>Richardson</th>
-        <th>Tomax</th>
-        <th>Total</th>
-      </thead>
-      <tbody>
-      </tbody>
-    </table>
+   <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../" class="navbar-brand">SaleSilk</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="../help/">Help</a>
+            </li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">Mike Eaton</a></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <table id="table" class="table table-striped table-hover table-bordered table-condensed">
+        <thead>
+          <th class="foo">Distributor</th>
+          <th>Innovation</th>
+          <th>Kanata</th>
+          <th>Perry</th>
+          <th>Richardson</th>
+          <th>Tomax</th>
+          <th>Total</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+
+    <script id="table-row" type="text/x-handlebars-template">
+      <tr class="overview">
+        <td>{{distributor}}</td>
+        <td>{{currency innovation}}</td>
+        <td>{{currency kanata}}</td>
+        <td>{{currency perry}}</td>
+        <td>{{currency richardson}}</td>
+        <td>{{currency tomax}}</td>
+        <td>{{currency total}}</td>
+      </tr>
+      <tr class="details">
+        <td colspan="99">
+          <div class="detailsWrapper container">
+            <div class="col-xs-12">
+              <h2>
+                <img src="{{gravatar 'graphics2lc@sbcglobal.net'}}" />
+                {{distributor}}
+              </h2>
+            </div>
+            <div class="col-xs-6">
+              <ul class="list-group">
+                <li class="list-group-item"><i class="fa fa-user"></i> Blanca Lievano</li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> 713-494-0873</li>
+                <li class="list-group-item"><i class="fa fa-envelope"></i> graphics2lc@sbcglobal.net</li>
+                <li class="list-group-item"><i class="fa fa-map-marker"></i> 1302 Waugh Dr #212, Houston, TX 77019</li>
+                <li class="list-group-item"><i class="fa fa-barcode"></i> 251338</li>
+              </ul>
+            </div>
+            <div class="col-xs-6">
+              <img class="img-responsive" src="{{googlemap '1302 Waugh Dr #212, Houston, TX 77019'}}" />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </script>
 
     <script src="js/handlebars.js"></script>
     <script src="js/md5.min.js"></script>
@@ -42,6 +140,9 @@
     <script src="data.js"></script>
 
     <script>
+      var T = {};
+      T.row = Handlebars.compile($("#table-row").html());
+
       // calculate totals
       window.data = _.map(window.data, function(row){
         row.total = row.innovation + row.kanata + row.perry + row.richardson + row.tomax;
@@ -49,10 +150,7 @@
       });
 
       function rowWriter(rowIndex, record, columns, cellWriter) {
-        var cssClass = "span4", li;
-        if (rowIndex % 3 === 0) { cssClass += ' first'; }
-        li = '<li class="' + cssClass + '"><div class="thumbnail"><div class="thumbnail-image">' + record.thumbnail + '</div><div class="caption">' + record.caption + '</div></div></li>';
-        return li;
+        return T.row(record);
       }
 
       $("#table").dynatable({
@@ -64,12 +162,22 @@
           paginationActiveClass: 'active',
           paginationDisabledClass: 'disabled',
         },
-        table: {
-          copyHeaderClass: true,
+        // table: {
+          // copyHeaderClass: true,
+          // bodyRowSelector: 'tbody tr',
+        // },
+        writers: {
+          _rowWriter: rowWriter,
         },
-         writers: {
-          _rowWriter: rowWriter
-        },
+      });
+
+      $("#table tr.overview").on('click', function(e){
+        e.preventDefault();
+        // console.log(e.target);
+        $details = $(e.target).closest('tr.overview').next('tr.details');
+        // $details.toggle();
+        $details.find('.detailsWrapper').slideToggle();
+        // console.log('clicked');
       });
 
       // keybindings
