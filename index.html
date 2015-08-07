@@ -108,17 +108,17 @@
           <div class="detailsWrapper container">
             <div class="col-xs-12">
               <h2>
-                <img src="{{gravatar 'graphics2lc@sbcglobal.net'}}" />
+                <img src="{{gravatar profile.email}}" />
                 {{distributor}}
               </h2>
             </div>
             <div class="col-xs-6">
               <ul class="list-group">
-                <li class="list-group-item"><i class="fa fa-user"></i> Blanca Lievano</li>
-                <li class="list-group-item"><i class="fa fa-phone"></i> 713-494-0873</li>
-                <li class="list-group-item"><i class="fa fa-envelope"></i> graphics2lc@sbcglobal.net</li>
-                <li class="list-group-item"><i class="fa fa-map-marker"></i> 1302 Waugh Dr #212, Houston, TX 77019</li>
-                <li class="list-group-item"><i class="fa fa-barcode"></i> 251338</li>
+                <li class="list-group-item"><i class="fa fa-user"></i> {{profile.name}}</li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> {{profile.phone}}</li>
+                <li class="list-group-item"><i class="fa fa-envelope"></i> {{profile.email}}</li>
+                <li class="list-group-item"><i class="fa fa-map-marker"></i> {{profile.address}}</li>
+                <li class="list-group-item"><i class="fa fa-barcode"></i> {{profile.id}}</li>
               </ul>
             </div>
             <div class="col-xs-6">
