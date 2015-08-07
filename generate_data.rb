@@ -16,6 +16,7 @@ data = 100.times.map{
     tomax: random_sales,
     profile: {
       name: Faker::Name.name,
+      phone: Faker::PhoneNumber.phone_number,
       email: Faker::Internet.email,
       address: Faker::Address.street_address + ", " + Faker::Address.city + " " + Faker::Address.state,
       id: rand(100_000) + 100_000
