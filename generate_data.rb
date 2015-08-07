@@ -3,7 +3,7 @@ require 'json'
 
 def random_sales
   return 0 if rand < 0.2
-  100 * rand(1000)
+  rand(100_000_00)/100.0
 end
 
 data = 100.times.map{
